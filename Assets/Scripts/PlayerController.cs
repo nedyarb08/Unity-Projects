@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(movement * speed);
 
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        other.gameObject.SetActive(false);
+    }
     void OnMove(InputValue movementValue)
     {
         Vector2 movementVector = movementValue.Get<Vector2>();
